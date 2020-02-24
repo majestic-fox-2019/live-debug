@@ -4,14 +4,13 @@ class StudentController {
     const { name, score } = req.body;
     const submitScore = Number(score);
     const TeacherId = req.teacher.id;
-    console.log(TeacherId, '< teacher Id')
     if (Number.isInteger(submitScore)) {
       next({
         status: 400,
         message: 'Score only accept number'
       });
     } else {
-      Student.create({
+      return Student.create({
         name: name,
         score: submitScore,
         TeacherId: TeacherId
