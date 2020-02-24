@@ -8,7 +8,7 @@ const errorhandler = require('./middlewares/errorhandler');
 app.use(cors);
 app.use(express.urlencoded({ extended: false }));
 
-app.use(routes);
+app.use('/', routes);
 app.use(errorhandler);
 
 module.exports = app;
