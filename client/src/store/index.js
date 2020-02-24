@@ -18,7 +18,7 @@ export default new Vuex.Store({
       state.articles = payload
     },
     FETCH_DOCTORS (state, payload) {
-      state.doctors = payload.data
+      state.doctors = payload
     },
     UPDATE_USER_DATA (state, payload) {
       state.user.name = payload.name
@@ -43,7 +43,7 @@ export default new Vuex.Store({
         method: 'get',
         url: 'http://localhost:3000/doctors'
       })
-        .then((data) => {
+        .then(({ data }) => {
           commit('FETCH_DOCTORS', data)
         })
         .catch(err => {
