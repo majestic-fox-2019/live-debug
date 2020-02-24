@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.Sequelize.Model;
-  class Student extends Model {}
+  class Student extends Model { }
   Student.init(
     {
       nama: {
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             msg: 'Student name should not empty'
           },
           notNull: {
-            args: true,
+            args: false,
             msg: 'Student name is required field'
           }
         }
@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       hooks: {
-        beforeValidate(student, options) {
+        beforeCreate(student, options) {
           const { score } = student;
           if (score < 0) {
             return Promise.reject({
@@ -67,7 +67,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   );
-  Student.associate = function(models) {
+  Student.associate = function (models) {
     // associations can be defined here
     Student.belongsTo(models.Teacher);
   };
