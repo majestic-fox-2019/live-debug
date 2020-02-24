@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             msg: 'Student name should not empty'
           },
           notNull: {
-            args: false,
+            args: true,
             msg: 'Student name is required field'
           }
         }

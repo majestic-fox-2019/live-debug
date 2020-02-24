@@ -52,6 +52,10 @@
         {
           "name": "sadas",
           "msg": "test"
+        },
+        {
+          "name": "Bayu",
+          "msg": "bayu test"
         }
       ]
     },
@@ -93,7 +97,7 @@
       "messages": [
         {
           "name": "Ilham",
-          "msg": "ilham disini"
+          "msg": "test"
         },
         {
           "name": "rubi",
@@ -101,7 +105,11 @@
         },
         {
           "name": "Ilham",
-          "msg": "test"
+          "msg": "ilham disini"
+        },
+        {
+          "name": "Test",
+          "msg": "last test"
         }
       ]
     },
@@ -132,7 +140,12 @@
       "id": 10,
       "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/thumbnails/82_23-2-2018_11-11-47.png",
       "rating": "93%",
-      "messages": []
+      "messages": [
+        {
+          "name": "Okka",
+          "msg": "final test"
+        }
+      ]
     }
   ],
   "articles": [
