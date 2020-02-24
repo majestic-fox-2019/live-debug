@@ -25,12 +25,12 @@ class TeacherController {
     const { email, password } = req.body;
     Teacher.findOne({
       where: {
-        email: email || ''
+        email: email
       }
     })
       .then(response => {
         if (response) {
-          if (comparePassword(password || '', response.password)) {
+          if (comparePassword(password, response.password)) {
             const payload = {
               id: response.id,
               email: response.email
