@@ -3,7 +3,7 @@
     <LeftMenu />
     <RightMenu />
     <div :click="toChat" class="chat">
-      <img src="../../assets/dokter.png" alt="dokter-chat" />
+      <img @click="toChat" src="../../assets/dokter.png" alt="dokter-chat" />
     </div>
   </div>
 </template>
