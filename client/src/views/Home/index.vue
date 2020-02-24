@@ -2,7 +2,7 @@
   <div class="home">
     <LeftMenu />
     <RightMenu />
-    <div :click="toChat" class="chat">
+    <div @click="toChat" class="chat">
       <img src="../../assets/dokter.png" alt="dokter-chat" />
     </div>
   </div>
