@@ -32,7 +32,7 @@ export default new Vuex.Store({
         url: 'http://localhost:3000/articles'
       })
         .then(({ data }) => {
-          commit("FETCH_DOCTORS", data);
+          commit('FETCH_DOCTORS', data)
         })
         .catch(err => {
           console.log(err)

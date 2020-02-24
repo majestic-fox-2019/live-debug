@@ -247,7 +247,7 @@ describe('Teacher Auth Service', function() {
         });
     });
     test(`Should return status 400 and object (message),
-     when email is not declared`, function(done) {
+      when email is not declared`, function(done) {
       request(app)
         .post('/login')
         .send({
