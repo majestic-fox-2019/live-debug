@@ -19,7 +19,11 @@ class TeacherController {
           access_token
         });
       })
-      .catch(err => next(err));
+      .catch(err => {
+        // next(err)
+        console.log(err, 'masuk kah?');
+        
+      });
   }
   static login(req, res, next) {
     const { email, password } = req.body;

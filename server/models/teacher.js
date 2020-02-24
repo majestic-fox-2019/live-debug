@@ -2,7 +2,9 @@
 const { hashPassword } = require('../helpers/bcrypt');
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.Sequelize.Model;
+
   class Teacher extends Model {}
+  
   Teacher.init(
     {
       email: {
