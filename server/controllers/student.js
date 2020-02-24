@@ -4,6 +4,7 @@ class StudentController {
     const { name, score } = req.body;
     const submitScore = Number(score);
     const TeacherId = req.teacher.id;
+    // console.log(score, name, submitScore);
     if (Number.isInteger(submitScore)) {
       next({
         status: 400,
