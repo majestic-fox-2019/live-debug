@@ -63,7 +63,6 @@ describe('Teacher Auth Service', function() {
           expect(decoded.payload).toHaveProperty('email', TEST_TEACHER_EMAIL);
           expect(decoded.payload).toHaveProperty('id');
           expect(decoded.payload).not.toHaveProperty('password');
-
           done();
         });
     });
@@ -270,7 +269,7 @@ describe('Teacher Auth Service', function() {
         })
         .then(response => {
           const { body, status } = response;
-          // expect(status).toBe(400);
+          expect(status).toBe(400);
           expect(body).toBeTypeOf('object');
           expect(body).toHaveProperty('message', 'Invalid email or password');
           done();

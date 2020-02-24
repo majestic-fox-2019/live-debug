@@ -9,7 +9,11 @@
       "messages": [
         {
           "name": "halo",
-          "msg": "siapa disana"
+          "msg": "halooo"
+        },
+        {
+          "name": "halo",
+          "msg": "hai"
         },
         {
           "name": "john",
@@ -17,11 +21,11 @@
         },
         {
           "name": "halo",
-          "msg": "hai"
+          "msg": "siapa disana"
         },
         {
-          "name": "halo",
-          "msg": "halooo"
+          "name": "Anova",
+          "msg": "Haii"
         }
       ]
     },
@@ -35,6 +39,10 @@
         {
           "name": "asdasd",
           "msg": "halo"
+        },
+        {
+          "name": "Anova",
+          "msg": "Hai"
         }
       ]
     },
@@ -44,7 +52,12 @@
       "id": 3,
       "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/images/607_11-12-2018_11-18-24.jpg",
       "rating": "89%",
-      "messages": []
+      "messages": [
+        {
+          "name": "Anova",
+          "msg": "Hai"
+        }
+      ]
     },
     {
       "name": "Drg. Marlisa",

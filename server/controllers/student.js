@@ -16,10 +16,10 @@ class StudentController {
         TeacherId: TeacherId
       })
         .then(response => {
-          res.status(201).json(`{
+          res.status(201).json({
             message: 'Successfully submit score',
             student: response
-          }`);
+          });
         })
         .catch(err => next(err));
     }
