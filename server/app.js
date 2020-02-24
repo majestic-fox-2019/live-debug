@@ -11,4 +11,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(routes);
 app.use(errorhandler);
 
+app.use(express.json())
+// const app = require('../');
+// const http = require('http');
+// const server = http.createServer(app);
+const PORT = 3000;
+
+app.listen(PORT, function () {
+  console.log(`LISTENING ON PORT ${PORT}`);
+});
 module.exports = app;
