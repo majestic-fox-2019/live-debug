@@ -47,6 +47,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import ChatModal from "./components/ChatModal";
 export default {
   name: "TanyaDokter",
@@ -62,11 +63,12 @@ export default {
     }
   },
   created() {
+    console.log(this.doctors, "<< ini dari tanyas");
     this.fetchArticles();
   },
   computed: {
     doctors() {
-      this.$store.state.doctors;
+      return this.$store.state.doctors;
     }
   }
 };

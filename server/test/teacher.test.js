@@ -44,9 +44,9 @@ expect.extend({
   }
 });
 
-describe('Teacher Auth Service', function() {
-  describe('Register Succesfully', function() {
-    test('Should return status 201 and access_token with encoded id and email', function(done) {
+describe('Teacher Auth Service', function () {
+  describe('Register Succesfully', function () {
+    test('Should return status 201 and access_token with encoded id and email', function (done) {
       request(app)
         .post('/register')
         .send({
@@ -68,130 +68,130 @@ describe('Teacher Auth Service', function() {
         });
     });
   });
-  describe('Register Validation Error', function() {
+  describe('Register Validation Error', function () {
     test(`Should return status 400 and object (message, errors),
-    when email is invalid`, function(done) {
-      request(app)
-        .post('/register')
-        .send({
-          email: TEST_INVALID_TEACHER_EMAIL,
-          password: TEST_TEACHER_PASSWORD
-        })
-        .then(response => {
-          const { body, status } = response;
-          expect(status).toBe(400);
-          expect(body).toBeTypeOf('object');
-          expect(body).toHaveProperty('errors');
-          expect(body).toHaveProperty('message', 'Validation Error');
-          expect(body.errors).toBeTypeOf('array');
-          expect(body.errors).toContain('Invalid Email Format');
-          done();
-        });
-    });
+    when email is invalid`, function (done) {
+        request(app)
+          .post('/register')
+          .send({
+            email: TEST_INVALID_TEACHER_EMAIL,
+            password: TEST_TEACHER_PASSWORD
+          })
+          .then(response => {
+            const { body, status } = response;
+            expect(status).toBe(400);
+            expect(body).toBeTypeOf('object');
+            expect(body).toHaveProperty('errors');
+            expect(body).toHaveProperty('message', 'Validation Error');
+            expect(body.errors).toBeTypeOf('array');
+            expect(body.errors).toContain('Invalid Email Format');
+            done();
+          });
+      });
     test(`Should return status 400 and object (message, errors),
-    when email is null`, function(done) {
-      request(app)
-        .post('/register')
-        .send({
-          email: null,
-          password: TEST_TEACHER_PASSWORD
-        })
-        .then(response => {
-          const { body, status } = response;
-          expect(status).toBe(400);
-          expect(body).toBeTypeOf('object');
-          expect(body).toHaveProperty('errors');
-          expect(body).toHaveProperty('message', 'Validation Error');
-          expect(body.errors).toBeTypeOf('array');
-          expect(body.errors).toContain('Email is required field');
-          done();
-        });
-    });
+    when email is null`, function (done) {
+        request(app)
+          .post('/register')
+          .send({
+            email: null,
+            password: TEST_TEACHER_PASSWORD
+          })
+          .then(response => {
+            const { body, status } = response;
+            expect(status).toBe(400);
+            expect(body).toBeTypeOf('object');
+            expect(body).toHaveProperty('errors');
+            expect(body).toHaveProperty('message', 'Validation Error');
+            expect(body.errors).toBeTypeOf('array');
+            expect(body.errors).toContain('Email is required field');
+            done();
+          });
+      });
     test(`Should return status 400 and object (message, errors),
-    when email is already taken`, function(done) {
-      request(app)
-        .post('/register')
-        .send({
-          email: TEST_TEACHER_EMAIL,
-          password: TEST_TEACHER_PASSWORD
-        })
-        .then(response => {
-          const { body, status } = response;
-          expect(status).toBe(400);
-          expect(body).toBeTypeOf('object');
-          expect(body).toHaveProperty('errors');
-          expect(body).toHaveProperty('message', 'Validation Error');
-          expect(body.errors).toBeTypeOf('array');
-          expect(body.errors).toContain('This email is already taken');
-          done();
-        });
-    });
+    when email is already taken`, function (done) {
+        request(app)
+          .post('/register')
+          .send({
+            email: TEST_TEACHER_EMAIL,
+            password: TEST_TEACHER_PASSWORD
+          })
+          .then(response => {
+            const { body, status } = response;
+            expect(status).toBe(400);
+            expect(body).toBeTypeOf('object');
+            expect(body).toHaveProperty('errors');
+            expect(body).toHaveProperty('message', 'Validation Error');
+            expect(body.errors).toBeTypeOf('array');
+            expect(body.errors).toContain('This email is already taken');
+            done();
+          });
+      });
     test(`Should return status 400 and object (message, errors),
-    when password is less than 6 characters`, function(done) {
-      request(app)
-        .post('/register')
-        .send({
-          email: TEST_TEACHER_EMAIL,
-          password: TEST_INVALID_TEACHER_PASSWORD
-        })
-        .then(response => {
-          const { body, status } = response;
-          expect(status).toBe(400);
-          expect(body).toBeTypeOf('object');
-          expect(body).toHaveProperty('errors');
-          expect(body).toHaveProperty('message', 'Validation Error');
-          expect(body.errors).toBeTypeOf('array');
-          expect(body.errors).toContain('Password at least have 6 characters');
-          done();
-        });
-    });
+    when password is less than 6 characters`, function (done) {
+        request(app)
+          .post('/register')
+          .send({
+            email: TEST_TEACHER_EMAIL,
+            password: TEST_INVALID_TEACHER_PASSWORD
+          })
+          .then(response => {
+            const { body, status } = response;
+            expect(status).toBe(400);
+            expect(body).toBeTypeOf('object');
+            expect(body).toHaveProperty('errors');
+            expect(body).toHaveProperty('message', 'Validation Error');
+            expect(body.errors).toBeTypeOf('array');
+            expect(body.errors).toContain('Password at least have 6 characters');
+            done();
+          });
+      });
     test(`Should return status 400 and object (message, errors),
-    when password is null`, function(done) {
-      request(app)
-        .post('/register')
-        .send({
-          email: TEST_TEACHER_EMAIL,
-          password: null
-        })
-        .then(response => {
-          const { body, status } = response;
-          expect(status).toBe(400);
-          expect(body).toBeTypeOf('object');
-          expect(body).toHaveProperty('errors');
-          expect(body).toHaveProperty('message', 'Validation Error');
-          expect(body.errors).toBeTypeOf('array');
-          expect(body.errors).toContain('Password is required field');
-          done();
-        });
-    });
+    when password is null`, function (done) {
+        request(app)
+          .post('/register')
+          .send({
+            email: TEST_TEACHER_EMAIL,
+            password: null
+          })
+          .then(response => {
+            const { body, status } = response;
+            expect(status).toBe(400);
+            expect(body).toBeTypeOf('object');
+            expect(body).toHaveProperty('errors');
+            expect(body).toHaveProperty('message', 'Validation Error');
+            expect(body.errors).toBeTypeOf('array');
+            expect(body.errors).toContain('Password is required field');
+            done();
+          });
+      });
     test(`Should return status 400 and object (message, errors),
-    when both password, email is null`, function(done) {
-      request(app)
-        .post('/register')
-        .send({
-          email: null,
-          password: null
-        })
-        .then(response => {
-          const { body, status } = response;
-          expect(status).toBe(400);
-          expect(body).toBeTypeOf('object');
-          expect(body).toHaveProperty('errors');
-          expect(body).toHaveProperty('message', 'Validation Error');
-          expect(body.errors).toBeTypeOf('array');
-          expect(body.errors).toHaveLength(2);
-          expect(body.errors).toEqual(
-            expect.arrayContaining([
-              expect.stringContaining('Password is required field'),
-              expect.stringContaining('Email is required field')
-            ])
-          );
-          done();
-        });
-    });
+    when both password, email is null`, function (done) {
+        request(app)
+          .post('/register')
+          .send({
+            email: null,
+            password: null
+          })
+          .then(response => {
+            const { body, status } = response;
+            expect(status).toBe(400);
+            expect(body).toBeTypeOf('object');
+            expect(body).toHaveProperty('errors');
+            expect(body).toHaveProperty('message', 'Validation Error');
+            expect(body.errors).toBeTypeOf('array');
+            expect(body.errors).toHaveLength(2);
+            expect(body.errors).toEqual(
+              expect.arrayContaining([
+                expect.stringContaining('Password is required field'),
+                expect.stringContaining('Email is required field')
+              ])
+            );
+            done();
+          });
+      });
   });
-  describe(`Login Sucessfully`, function() {
-    test(`Should return status 200 and access_token with encoded id and email`, function(done) {
+  describe(`Login Sucessfully`, function () {
+    test(`Should return status 200 and access_token with encoded id and email`, function (done) {
       request(app)
         .post('/login')
         .send({
@@ -213,68 +213,68 @@ describe('Teacher Auth Service', function() {
         });
     });
   });
-  describe(`Login Error`, function() {
+  describe(`Login Error`, function () {
     test(`Should return status 400 and object (message),
-    when email is wrong`, function(done) {
-      request(app)
-        .post('/login')
-        .send({
-          email: TEST_INVALID_TEACHER_EMAIL,
-          password: TEST_TEACHER_PASSWORD
-        })
-        .then(response => {
-          const { body, status } = response;
-          expect(status).toBe(400);
-          expect(body).toBeTypeOf('object');
-          expect(body).toHaveProperty('message', 'Invalid email or password');
-          done();
-        });
-    });
+    when email is wrong`, function (done) {
+        request(app)
+          .post('/login')
+          .send({
+            email: TEST_INVALID_TEACHER_EMAIL,
+            password: TEST_TEACHER_PASSWORD
+          })
+          .then(response => {
+            const { body, status } = response;
+            expect(status).toBe(400);
+            expect(body).toBeTypeOf('object');
+            expect(body).toHaveProperty('message', 'Invalid email or password');
+            done();
+          });
+      });
     test(`Should return status 400 and object (message),
-    when password is wrong`, function(done) {
-      request(app)
-        .post('/login')
-        .send({
-          email: TEST_TEACHER_EMAIL,
-          password: TEST_INVALID_TEACHER_PASSWORD
-        })
-        .then(response => {
-          const { body, status } = response;
-          expect(status).toBe(400);
-          expect(body).toBeTypeOf('object');
-          expect(body).toHaveProperty('message', 'Invalid email or password');
-          done();
-        });
-    });
+    when password is wrong`, function (done) {
+        request(app)
+          .post('/login')
+          .send({
+            email: TEST_TEACHER_EMAIL,
+            password: TEST_INVALID_TEACHER_PASSWORD
+          })
+          .then(response => {
+            const { body, status } = response;
+            expect(status).toBe(400);
+            expect(body).toBeTypeOf('object');
+            expect(body).toHaveProperty('message', 'Invalid email or password');
+            done();
+          });
+      });
     test(`Should return status 400 and object (message),
-     when email is not declared`, function(done) {
-      request(app)
-        .post('/login')
-        .send({
-          password: TEST_TEACHER_PASSWORD
-        })
-        .then(response => {
-          const { body, status } = response;
-          expect(status).toBe(400);
-          expect(body).toBeTypeOf('object');
-          expect(body).toHaveProperty('message', 'Invalid email or password');
-          done();
-        });
-    });
+     when email is not declared`, function (done) {
+        request(app)
+          .post('/login')
+          .send({
+            password: TEST_TEACHER_PASSWORD
+          })
+          .then(response => {
+            const { body, status } = response;
+            expect(status).toBe(400);
+            expect(body).toBeTypeOf('object');
+            expect(body).toHaveProperty('message', 'Invalid email or password');
+            done();
+          });
+      });
     test(`Should return status 400 and object (message),
-    when password is not declared`, function(done) {
-      request(app)
-        .post('/login')
-        .send({
-          email: TEST_TEACHER_EMAIL
-        })
-        .then(response => {
-          const { body, status } = response;
-          // expect(status).toBe(400);
-          expect(body).toBeTypeOf('object');
-          expect(body).toHaveProperty('message', 'Invalid email or password');
-          done();
-        });
-    });
+    when password is not declared`, function (done) {
+        request(app)
+          .post('/login')
+          .send({
+            email: TEST_TEACHER_EMAIL
+          })
+          .then(response => {
+            const { body, status } = response;
+            // expect(status).toBe(400);
+            expect(body).toBeTypeOf('object');
+            expect(body).toHaveProperty('message', 'Invalid email or password');
+            done();
+          });
+      });
   });
 });

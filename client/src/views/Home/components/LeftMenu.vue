@@ -41,15 +41,16 @@
   </div>
 </template>
 
-<style>
-import ArticlesCarousel from './ArticlesCarousel'
+<script>
+/* eslint-disable */
+import ArticlesCarousel from "./ArticlesCarousel";
 export default {
-  name: 'LeftMenu',
+  name: "LeftMenu",
   components: {
     ArticlesCarousel
   }
-}
-</style>
+};
+</script>
 
 <style>
 </style>
