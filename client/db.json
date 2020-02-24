@@ -8,8 +8,16 @@
       "rating": "100%",
       "messages": [
         {
+          "name": "er",
+          "msg": "kenapa begini"
+        },
+        {
           "name": "halo",
-          "msg": "siapa disana"
+          "msg": "halooo"
+        },
+        {
+          "name": "halo",
+          "msg": "hai"
         },
         {
           "name": "john",
@@ -17,11 +25,15 @@
         },
         {
           "name": "halo",
-          "msg": "hai"
+          "msg": "siapa disana"
         },
         {
-          "name": "halo",
-          "msg": "halooo"
+          "name": "er",
+          "msg": "sd"
+        },
+        {
+          "name": "er",
+          "msg": "kenapa kepala sakit "
         }
       ]
     },
@@ -65,7 +77,12 @@
       "id": 5,
       "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/thumbnails/196758_23-4-2019_17-39-21.jpg",
       "rating": "90%",
-      "messages": []
+      "messages": [
+        {
+          "name": "er",
+          "msg": "sdk"
+        }
+      ]
     },
     {
       "name": "Dr. Iman Teguh",

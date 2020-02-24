@@ -43,7 +43,7 @@ export default new Vuex.Store({
         method: 'get',
         url: 'http://localhost:3000/doctors'
       })
-        .then((data) => {
+        .then(({ data }) => {
           commit('FETCH_DOCTORS', data)
         })
         .catch(err => {
