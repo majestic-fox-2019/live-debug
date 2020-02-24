@@ -69,6 +69,8 @@ describe('Teacher Auth Service', function() {
     });
   });
   describe('Register Validation Error', function() {
+    console.log('masuktest')
+
     test(`Should return status 400 and object (message, errors),
     when email is invalid`, function(done) {
       request(app)

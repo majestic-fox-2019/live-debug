@@ -14,7 +14,8 @@ class TeacherController {
           email: response.email
         };
         const access_token = generateToken(payload);
-        req.status(200).json({
+        console.log(access_token)
+        req.status(201).json({
           message: 'Successfully Register',
           access_token
         });

@@ -10,7 +10,7 @@ module.exports = function(err, req, res, next) {
     res.status(400).json({ message: 'Validation Error', errors });
   } else if (err.name === 'JsonWebTokenError') {
     res.status(401).json({
-      message: 'Authentication failed'
+      message: 'Invalid access_token'
     });
   } else {
     res.status(err.status || 500).json({
