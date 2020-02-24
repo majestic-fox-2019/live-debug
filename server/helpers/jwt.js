@@ -1,11 +1,10 @@
 const jwt = require('jsonwebtoken');
 const SECRET = process.env.JWT_SECRET;
-generateToken = function (payload) {
-  console.log(payload);
-  return jwt.sign(payload, SECRET);
+function generateToken(payload) {
+  return jwt.sign({ id: payload.id }, SECRET);
 };
 
-verifyToken = function (payload) {
+function verifyToken(payload) {
   return jwt.verify(payload, SECRET);
 };
 

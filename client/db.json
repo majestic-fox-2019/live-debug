@@ -8,6 +8,10 @@
       "rating": "100%",
       "messages": [
         {
+          "name": "putra",
+          "msg": "tes"
+        },
+        {
           "name": "halo",
           "msg": "siapa disana"
         },
@@ -22,6 +26,10 @@
         {
           "name": "halo",
           "msg": "halooo"
+        },
+        {
+          "name": "cek",
+          "msg": "asd"
         }
       ]
     },
@@ -35,6 +43,10 @@
         {
           "name": "asdasd",
           "msg": "halo"
+        },
+        {
+          "name": "putra",
+          "msg": "cek pak"
         }
       ]
     },
@@ -44,7 +56,12 @@
       "id": 3,
       "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/images/607_11-12-2018_11-18-24.jpg",
       "rating": "89%",
-      "messages": []
+      "messages": [
+        {
+          "name": "cek",
+          "msg": "masuk pak eko"
+        }
+      ]
     },
     {
       "name": "Drg. Marlisa",
@@ -56,6 +73,10 @@
         {
           "name": "Michael",
           "msg": "Saya gak enang badan dok 😷"
+        },
+        {
+          "name": "",
+          "msg": "masuk pak eko"
         }
       ]
     },

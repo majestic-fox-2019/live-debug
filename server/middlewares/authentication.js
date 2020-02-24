@@ -1,9 +1,9 @@
 const { verifyToken } = require('../helpers/jwt');
 const { Teacher } = require('../models');
 
-module.exports = function(req, res, next) {
+module.exports = function (req, res, next) {
   try {
-    const access_token = req.header.access_token;
+    const access_token = req.headers.access_token;
     req.teacher = verifyToken(access_token);
     Teacher.findOne({
       where: {
@@ -11,7 +11,6 @@ module.exports = function(req, res, next) {
       }
     })
       .then(response => {
-        next()
         if (response) {
           next();
         } else {

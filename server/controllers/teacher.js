@@ -3,23 +3,24 @@ const { generateToken } = require('../helpers/jwt');
 const { comparePassword } = require('../helpers/bcrypt');
 class TeacherController {
   static register(res, req, next) {
-    const { email, password } = res.body;
     Teacher.create({
-      email,
-      password
+      email: res.body.email,
+      password: res.body.password
     })
       .then(response => {
         const payload = {
           id: response.id,
-          email: response.email
+          email: response.dataValues.email
         };
-        const access_token = generateToken(payload);
-        req.status(200).json({
+        const token = generateToken(payload);
+        req.status(201).json({
           message: 'Successfully Register',
-          access_token
+          access_token: token,
+          email: payload.email,
+          id: payload.id
         });
       })
-      .catch(err => next(err));
+      .catch(next);
   }
   static login(req, res, next) {
     const { email, password } = req.body;
@@ -35,10 +36,12 @@ class TeacherController {
               id: response.id,
               email: response.email
             };
-            const access_token = generateToken(payload);
+            const token = generateToken(payload);
             res.status(200).json({
               message: 'Successfully Login',
-              access_token
+              access_token: token,
+              email: payload.email,
+              id: payload.id
             });
           } else {
             next({
