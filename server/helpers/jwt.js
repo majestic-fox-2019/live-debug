@@ -6,8 +6,9 @@ function generateToken(payload) {
   return jwt.sign(payload, SECRET);
 };
 
-function verifyToken (payload) {
-  // return jwt.verify(payload, SECRET);
+function verifyToken(payload) {
+  // console.log(payload, 'masuk ke verify gak?');
+  return jwt.verify(payload, SECRET);
 };
 
 module.exports = {

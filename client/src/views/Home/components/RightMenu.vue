@@ -20,7 +20,7 @@ export default {
       this.$store.dispatch('fetchArticles')
     }
   },
-  created: {
+  created: () => {
     this.fetchArticles()
   },
   computed: {

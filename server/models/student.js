@@ -6,22 +6,23 @@ module.exports = (sequelize, DataTypes) => {
   
   Student.init(
     {
-      nama: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-          notEmpty: {
-            args: true,
-            msg: 'Student name should not empty'
-          },
-          notNull: {
-            args: true,
-            msg: 'Student name is required field'
-          }
-        }
+        // validate: {
+        //   notEmpty: {
+        //     args: true,
+        //     msg: 'Student name should not empty'
+        //   },
+        //   notNull: {
+        //     args: true,
+        //     msg: 'Student name is required field'
+        //   }
+        // }
       },
       score: {
         type: DataTypes.ENUM,
+        // type: DataTypes.INTEGER,
         values: ['A', 'B', 'C', 'D'],
         validate: {
           isIn: {
@@ -46,12 +47,13 @@ module.exports = (sequelize, DataTypes) => {
       hooks: {
         beforeValidate(student, options) {
           const { score } = student;
+          console.log(score, 'score befVald');
           if (score < 0) {
             return Promise.reject({
               status: 400,
               message: 'Score cannot be less than 0'
             });
-          } else if (score < 100) {
+          } else if (score > 100) {
             return Promise.reject({
               status: 400,
               message: 'Score cannot be greater than 100'
