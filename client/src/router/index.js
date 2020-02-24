@@ -18,12 +18,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "tanyadokter" */ '../views/TanyaDokter'),
     children: [
       {
-        path: '',
+        path: '/',
         name: 'chat home',
         component: ChatHome
       },
       {
-        path: ':id',
+        path: '/:id',
         name: 'chat',
         component: ChatDetail
       }

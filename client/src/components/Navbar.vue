@@ -1,6 +1,6 @@
 <template>
   <div id="nav">
-      <div @click.prevent="toHome()" class="nav-img">
+      <div @click.prevent="toHome" class="nav-img">
         <div class="nav-img-logo">
           <img src="../assets/logoimg.png" alt="logoImg">
         </div>

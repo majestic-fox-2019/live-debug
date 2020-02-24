@@ -1,4 +1,5 @@
 const { Student } = require('../models');
+
 class StudentController {
   static submit(req, res, next) {
     const { name, score } = req.body;
@@ -10,7 +11,7 @@ class StudentController {
         message: 'Score only accept number'
       });
     } else {
-      Student.create({
+      return Student.create({
         name: name || '',
         score: submitScore,
         TeacherId: TeacherId
@@ -18,7 +19,7 @@ class StudentController {
         .then(response => {
           res.status(201).json(`{
             message: 'Successfully submit score',
-            student: response
+            student: ${response}
           }`);
         })
         .catch(err => next(err));

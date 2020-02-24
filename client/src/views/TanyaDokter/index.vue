@@ -4,7 +4,7 @@
       <router-view />
     </div>
     <div class="right-menu-dokter">
-      <div v-for="doctor in doctor" :key="doctor.id" class="dokter-card">
+      <div v-for="doctor in doctors" :key="doctor.id" class="dokter-card">
         <div class="dokter-card-body">
           <div class="dokter-card-img">
             <img :src="doctor.imageUrl" alt="dokter" />
@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import ChatModal from "./components/ChatModal";
+import ChatModal from "./components/ChatModal.vue";
 export default {
   name: "TanyaDokter",
   components: {
@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     fetchArticles() {
-      this.$store.dispatch("fetchDoctors");
+      this.$store.dispatch("fetchArticles");
     },
     chat(id) {
       this.$router.push(`/tanya-dokter/${id}`);
@@ -66,7 +66,7 @@ export default {
   },
   computed: {
     doctors() {
-      this.$store.state.doctors;
+      return this.$store.state.doctors;
     }
   }
 };
