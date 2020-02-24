@@ -4,7 +4,7 @@
 
 ubah `env-template` menjadi `.env`
 
-sebelum menjalankan test ubah config file dan isi dengan credentials server kamu
+sebelum menjalank test ubah config file dan isi dengan credentials server kamu
 setelah di ubah makan jalankan `npm run initdb` script tersebut untuk membuat database yang sesuai dengan config dan melakukan migration.
 
 ```bash
