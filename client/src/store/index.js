@@ -18,7 +18,7 @@ export default new Vuex.Store({
       state.articles = payload
     },
     FETCH_DOCTORS (state, payload) {
-      state.doctors = payload
+      state.doctors = payload.data
     },
     UPDATE_USER_DATA (state, payload) {
       state.user.name = payload.name
