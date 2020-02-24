@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
-const SECRET = process.env.JWT_SECRET;
+require('dotenv').config()
+
+const SECRET = process.env.JWT_SECRET || 'livedebug';
 exports.generateToken = function(payload) {
   return jwt.sign(payload, SECRET);
 };
