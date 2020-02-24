@@ -1,6 +1,7 @@
 const { Student } = require('../models');
 class StudentController {
   static submit(req, res, next) {
+    console.log('Masuk submit')
     const { name, score } = req.body;
     const submitScore = Number(score);
     const TeacherId = req.teacher.id;
