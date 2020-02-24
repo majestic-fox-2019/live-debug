@@ -17,10 +17,10 @@ export default {
   name: 'RightMenu',
   methods: {
     fetchArticles () {
-      this.$store.dispatch('fetchArticles')
+      this.$store.dispatch('FETCH_ARTICLES')
     }
   },
-  created: {
+  created () {
     this.fetchArticles()
   },
   computed: {
@@ -31,5 +31,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

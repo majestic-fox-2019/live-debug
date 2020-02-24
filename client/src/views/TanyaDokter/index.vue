@@ -14,10 +14,14 @@
               <p>{{ doctor.name }}</p>
             </div>
             <div class="dokter-card-spesialis">
-              <p class="mb-1" style="color:color:#999999;margin:0;">{{ doctor.spesialis }}</p>
+              <p class="mb-1" style="color:color:#999999;margin:0;">
+                {{ doctor.spesialis }}
+              </p>
             </div>
             <div class="dokter-card-bonus">
-              <p style="color:#53565a;font-weight:bold; font-size:15px;margin:0;">
+              <p
+                style="color:#53565a;font-weight:bold; font-size:15px;margin:0;"
+              >
                 GRATIS
                 <span style="font-size:12px;">(3 konsultasi pertama)</span>
               </p>
@@ -36,7 +40,9 @@
               @click.prevent="chat(doctor.id)"
               data-toggle="modal"
               data-target="#exampleModalCenter"
-            >CHAT</button>
+            >
+              CHAT
+            </button>
           </div>
         </div>
       </div>
@@ -47,29 +53,29 @@
 </template>
 
 <script>
-import ChatModal from "./components/ChatModal";
+import ChatModal from './components/ChatModal'
 export default {
-  name: "TanyaDokter",
+  name: 'TanyaDokter',
   components: {
     ChatModal
   },
   methods: {
-    fetchArticles() {
-      this.$store.dispatch("fetchDoctors");
+    fetchArticles () {
+      this.$store.dispatch('fetchDoctors')
     },
-    chat(id) {
-      this.$router.push(`/tanya-dokter/${id}`);
+    chat (id) {
+      this.$router.push(`/tanya-dokter/${id}`)
     }
   },
-  created() {
-    this.fetchArticles();
+  created () {
+    this.fetchArticles()
   },
   computed: {
-    doctors() {
-      this.$store.state.doctors;
+    doctors () {
+      return this.$store.state.doctors
     }
   }
-};
+}
 </script>
 
 <style scoped>
