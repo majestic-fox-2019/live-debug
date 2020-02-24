@@ -1,23 +1,30 @@
 const { Teacher } = require('../models');
-const { generateToken } = require('../helpers/jwt');
+const generateToken = require('../helpers/jwt');
 const { comparePassword } = require('../helpers/bcrypt');
+
 class TeacherController {
   static register(res, req, next) {
     const { email, password } = res.body;
+    console.log(email, password);
     Teacher.create({
       email,
       password
     })
       .then(response => {
+        // console.log(response.id, 'apakah ini?');
         const payload = {
           id: response.id,
           email: response.email
         };
-        const access_token = generateToken(payload);
+        // console.log(payload, 'payload cuy');
+        // generateToken.generateToken(payload)
+        const access_token = generateToken.generateToken(payload);
         req.status(200).json({
           message: 'Successfully Register',
           access_token
         });
+        // console.log(access_token, 'ini kebaca ga?');
+        
       })
       .catch(err => {
         // next(err)
