@@ -2,27 +2,27 @@
   <div class="home">
     <LeftMenu />
     <RightMenu />
-    <div :click="toChat" class="chat">
+    <div @click.prevent="toChat" class="chat">
       <img src="../../assets/dokter.png" alt="dokter-chat" />
     </div>
   </div>
 </template>
 
 <script>
-import LeftMenu from "./components/LeftMenu";
-import RightMenu from "./components/RightMenu";
+import LeftMenu from './components/LeftMenu'
+import RightMenu from './components/RightMenu'
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     LeftMenu,
     RightMenu
   },
   methods: {
-    toChat() {
-      this.$router.push("/tanya-dokter");
+    toChat () {
+      this.$router.push('/tanya-dokter')
     }
   }
-};
+}
 </script>
 
 <style>
