@@ -44,7 +44,16 @@
       "id": 3,
       "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/images/607_11-12-2018_11-18-24.jpg",
       "rating": "89%",
-      "messages": []
+      "messages": [
+        {
+          "name": "fajri",
+          "msg": "asd"
+        },
+        {
+          "name": "",
+          "msg": ""
+        }
+      ]
     },
     {
       "name": "Drg. Marlisa",
