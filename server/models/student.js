@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   class Student extends Model {}
   Student.init(
     {
-      nama: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {

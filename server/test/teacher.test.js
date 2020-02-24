@@ -47,7 +47,7 @@ expect.extend({
 describe('Teacher Auth Service', function() {
   describe('Register Succesfully', function() {
     test('Should return status 201 and access_token with encoded id and email', function(done) {
-      request(app)
+       request(app)
         .post('/register')
         .send({
           email: TEST_TEACHER_EMAIL,
@@ -63,7 +63,6 @@ describe('Teacher Auth Service', function() {
           expect(decoded.payload).toHaveProperty('email', TEST_TEACHER_EMAIL);
           expect(decoded.payload).toHaveProperty('id');
           expect(decoded.payload).not.toHaveProperty('password');
-
           done();
         });
     });
