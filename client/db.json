@@ -8,6 +8,10 @@
       "rating": "100%",
       "messages": [
         {
+          "name": "test",
+          "msg": "tesrt"
+        },
+        {
           "name": "halo",
           "msg": "siapa disana"
         },
@@ -22,6 +26,10 @@
         {
           "name": "halo",
           "msg": "halooo"
+        },
+        {
+          "name": "adad",
+          "msg": "test"
         }
       ]
     },
@@ -44,7 +52,12 @@
       "id": 3,
       "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/images/607_11-12-2018_11-18-24.jpg",
       "rating": "89%",
-      "messages": []
+      "messages": [
+        {
+          "name": "",
+          "msg": "test"
+        }
+      ]
     },
     {
       "name": "Drg. Marlisa",
@@ -56,6 +69,10 @@
         {
           "name": "Michael",
           "msg": "Saya gak enang badan dok 😷"
+        },
+        {
+          "name": "tasadada",
+          "msg": "test"
         }
       ]
     },
