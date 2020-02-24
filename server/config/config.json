@@ -1,15 +1,15 @@
 {
   "development": {
-    "username": "",
-    "password": null,
+    "username": "postgres",
+    "password": "postgres",
     "database": "live-debug-server",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "",
-    "password": null,
-    "database": "live-debug-server",
+    "username": "postgres",
+    "password": "postgres",
+    "database": "live-debug-server test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home'
 import ChatHome from '../views/TanyaDokter/components/ChatHome.vue'
 import ChatDetail from '../views/TanyaDokter/components/ChatDetail.vue'
+import TanyaDokter from '../views/TanyaDokter'
 
 Vue.use(VueRouter)
 
@@ -15,15 +16,15 @@ const routes = [
   {
     path: '/tanya-dokter',
     name: 'tanya dokter',
-    component: () => import(/* webpackChunkName: "tanyadokter" */ '../views/TanyaDokter'),
+    component: TanyaDokter,
     children: [
       {
-        path: '',
+        path: '/',
         name: 'chat home',
         component: ChatHome
       },
       {
-        path: ':id',
+        path: '/:id',
         name: 'chat',
         component: ChatDetail
       }

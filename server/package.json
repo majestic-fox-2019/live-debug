@@ -2,7 +2,7 @@
   "name": "live-code-2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "clear && jest --detectOpenHandles --runInBand --forceExit",
     "initdb": "sequelize db:create --env=test && sequelize db:migrate --env=test"

@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'ArticlesCarousel'
+    name: 'ArticlesCarousel'
 }
 </script>
 
