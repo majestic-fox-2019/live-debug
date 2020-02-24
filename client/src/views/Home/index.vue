@@ -2,13 +2,14 @@
   <div class="home">
     <LeftMenu />
     <RightMenu />
-    <div :click="toChat" class="chat">
+    <div v-on:click="toChat" class="chat">
       <img src="../../assets/dokter.png" alt="dokter-chat" />
     </div>
   </div>
 </template>
 
 <script>
+/* eslint-disable */
 import LeftMenu from "./components/LeftMenu";
 import RightMenu from "./components/RightMenu";
 export default {

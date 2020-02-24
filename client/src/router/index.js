@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home'
 import ChatHome from '../views/TanyaDokter/components/ChatHome.vue'
 import ChatDetail from '../views/TanyaDokter/components/ChatDetail.vue'
-
+/* eslint-disable */
 Vue.use(VueRouter)
 
 const routes = [

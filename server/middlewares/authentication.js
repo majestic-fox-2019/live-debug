@@ -1,9 +1,8 @@
 const { verifyToken } = require('../helpers/jwt');
 const { Teacher } = require('../models');
-
-module.exports = function(req, res, next) {
+function Authentication(req, res, next) {
   try {
-    const access_token = req.header.access_token;
+    const access_token = req.headers.access_token;
     req.teacher = verifyToken(access_token);
     Teacher.findOne({
       where: {
@@ -11,7 +10,7 @@ module.exports = function(req, res, next) {
       }
     })
       .then(response => {
-        next()
+        // next()
         if (response) {
           next();
         } else {
@@ -26,3 +25,5 @@ module.exports = function(req, res, next) {
     next(err);
   }
 };
+
+module.exports = Authentication

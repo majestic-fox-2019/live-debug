@@ -79,138 +79,138 @@ expect.extend({
   }
 });
 
-describe('Student scoring service', function() {
-  describe('Submit student score', function() {
-    describe('Successfully submit student score', function() {
-      test(`Should return 201 and object (message, student),
-      with score result is 'A'`, function(done) {
-        request(app)
-          .post('/students')
-          .send({
-            name: 'Budi',
-            score: 95
-          })
-          .set('access_token', access_token)
-          .then(response => {
-            const { body, status } = response;
-            const { payload } = jwt.decode(access_token, { complete: true });
-            expect(status).toBe(201);
-            expect(body).toHaveProperty('message', 'Successfully submit score');
-            expect(body).toHaveProperty('student');
-            expect(body.student).toHaveProperty('score', 'A');
-            expect(body.student).toHaveProperty('TeacherId', payload.id);
-            done();
-          });
-      });
-      test(`Should return 201 and object (message, student),
-      with score result is 'D'`, function(done) {
-        request(app)
-          .post('/students')
-          .send({
-            name: 'Lala',
-            score: 55
-          })
-          .set('access_token', access_token)
-          .then(response => {
-            const { body, status } = response;
-            const { payload } = jwt.decode(access_token, { complete: true });
-            expect(status).toBe(201);
-            expect(body).toHaveProperty('message', 'Successfully submit score');
-            expect(body).toHaveProperty('student');
-            expect(body.student).toHaveProperty('score', 'D');
-            expect(body.student).toHaveProperty('TeacherId', payload.id);
-            done();
-          });
-      });
+describe('Student scoring service', function () {
+  describe('Submit student score', function () {
+    describe('Successfully submit student score', function () {
+      test.only(`Should return 201 and object (message, student),
+      with score result is 'A'`, function (done) {
+          request(app)
+            .post('/students')
+            .send({
+              name: 'Budi',
+              score: 95
+            })
+            .set('access_token', access_token)
+            .then(response => {
+              const { body, status } = response;
+              const { payload } = jwt.decode(access_token, { complete: true });
+              expect(status).toBe(201);
+              expect(body).toHaveProperty('message', 'Successfully submit score');
+              expect(body).toHaveProperty('student');
+              expect(body.student).toHaveProperty('score', 'A');
+              expect(body.student).toHaveProperty('TeacherId', payload.id);
+              done();
+            });
+        });
+      test.only(`Should return 201 and object (message, student),
+      with score result is 'D'`, function (done) {
+          request(app)
+            .post('/students')
+            .send({
+              name: 'Lala',
+              score: 55
+            })
+            .set('access_token', access_token)
+            .then(response => {
+              const { body, status } = response;
+              const { payload } = jwt.decode(access_token, { complete: true });
+              expect(status).toBe(201);
+              expect(body).toHaveProperty('message', 'Successfully submit score');
+              expect(body).toHaveProperty('student');
+              expect(body.student).toHaveProperty('score', 'D');
+              expect(body.student).toHaveProperty('TeacherId', payload.id);
+              done();
+            });
+        });
     });
-    describe('Fail to submit student score', function() {
-      test(`Should return 400 and object (message),
-      when input score less than 0`, function(done) {
-        request(app)
-          .post('/students')
-          .send({
-            name: 'dimitri',
-            score: -25
-          })
-          .set('access_token', access_token)
-          .then(response => {
-            const { body, status } = response;
-            expect(status).toBe(400);
-            expect(body).toHaveProperty(
-              'message',
-              'Score cannot be less than 0'
-            );
-            done();
-          });
-      });
-      test(`Should return 400 and object (message),
-      when input score greater than 0`, function(done) {
-        request(app)
-          .post('/students')
-          .send({
-            name: 'dimitri',
-            score: 200
-          })
-          .set('access_token', access_token)
-          .then(response => {
-            const { body, status } = response;
-            expect(status).toBe(400);
-            expect(body).toHaveProperty(
-              'message',
-              'Score cannot be greater than 100'
-            );
-            done();
-          });
-      });
-      test(`Should return 401 and object (message),
-      when submit without access_token`, function(done) {
-        request(app)
-          .post('/students')
-          .send({
-            name: 'dimitri',
-            score: 200
-          })
-          .then(response => {
-            const { body, status } = response;
-            expect(status).toBe(401);
-            expect(body).toHaveProperty('message', 'Authentication failed');
-            done();
-          });
-      });
-      test(`Should return 401 and object (message),
-      when submit with invalid access_token`, function(done) {
-        request(app)
-          .post('/students')
-          .send({
-            name: 'arnold',
-            score: 88
-          })
-          .set('access_token', invalid_access_token)
-          .then(response => {
-            const { body, status } = response;
-            expect(status).toBe(401);
-            expect(body).toHaveProperty('message', 'Authentication failed');
-            done();
-          });
-      });
-      test(`Should return 400 and object (message, errors),
-      when student name is not defined`, function(done) {
-        request(app)
-          .post('/students')
-          .send({
-            score: 66
-          })
-          .set('access_token', access_token)
-          .then(response => {
-            const { body, status } = response;
-            expect(status).toBe(400);
-            expect(body).toHaveProperty('errors');
-            expect(body).toHaveProperty('message', 'Validation Error');
-            expect(body.errors).toBeTypeOf('array');
-            expect(body.errors).toContain('Student name should not empty');
-            done();
-          });
-      });
+    describe('Fail to submit student score', function () {
+      test.only(`Should return 400 and object (message),
+      when input score less than 0`, function (done) {
+          request(app)
+            .post('/students')
+            .send({
+              name: 'dimitri',
+              score: -25
+            })
+            .set('access_token', access_token)
+            .then(response => {
+              const { body, status } = response;
+              expect(status).toBe(400);
+              expect(body).toHaveProperty(
+                'message',
+                'Score cannot be less than 0'
+              );
+              done();
+            });
+        });
+      test.only(`Should return 400 and object (message),
+      when input score greater than 0`, function (done) {
+          request(app)
+            .post('/students')
+            .send({
+              name: 'dimitri',
+              score: 200
+            })
+            .set('access_token', access_token)
+            .then(response => {
+              const { body, status } = response;
+              expect(status).toBe(400);
+              expect(body).toHaveProperty(
+                'message',
+                'Score cannot be greater than 100'
+              );
+              done();
+            });
+        });
+      test.only(`Should return 401 and object (message),
+      when submit without access_token`, function (done) {
+          request(app)
+            .post('/students')
+            .send({
+              name: 'dimitri',
+              score: 200
+            })
+            .then(response => {
+              const { body, status } = response;
+              expect(status).toBe(401);
+              expect(body).toHaveProperty('message', 'Authentication failed');
+              done();
+            });
+        });
+      test.only(`Should return 401 and object (message),
+      when submit with invalid access_token`, function (done) {
+          request(app)
+            .post('/students')
+            .send({
+              name: 'arnold',
+              score: 88
+            })
+            .set('access_token', invalid_access_token)
+            .then(response => {
+              const { body, status } = response;
+              expect(status).toBe(401);
+              expect(body).toHaveProperty('message', 'Authentication failed');
+              done();
+            });
+        });
+      test.only(`Should return 400 and object (message, errors),
+      when student name is not defined`, function (done) {
+          request(app)
+            .post('/students')
+            .send({
+              score: 66
+            })
+            .set('access_token', access_token)
+            .then(response => {
+              const { body, status } = response;
+              expect(status).toBe(400);
+              expect(body).toHaveProperty('errors');
+              expect(body).toHaveProperty('message', 'Validation Error');
+              expect(body.errors).toBeTypeOf('array');
+              expect(body.errors).toContain('Student name should not empty');
+              done();
+            });
+        });
     });
   });
 });
