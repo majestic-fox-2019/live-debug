@@ -82,9 +82,9 @@ expect.extend({
 describe('Student scoring service', function() {
   describe('Submit student score', function() {
     describe('Successfully submit student score', function() {
-      test(`Should return 201 and object (message, student),
-      with score result is 'A'`, function(done) {
-        request(app)
+      it(`Should return 201 and object (message, student),
+      with score result is 'A'`, async (done) => {
+        await request(app)
           .post('/students')
           .send({
             name: 'Budi',
@@ -102,9 +102,9 @@ describe('Student scoring service', function() {
             done();
           });
       });
-      test(`Should return 201 and object (message, student),
-      with score result is 'D'`, function(done) {
-        request(app)
+      it(`Should return 201 and object (message, student),
+      with score result is 'D'`, async (done) => {
+        await request(app)
           .post('/students')
           .send({
             name: 'Lala',
@@ -124,9 +124,9 @@ describe('Student scoring service', function() {
       });
     });
     describe('Fail to submit student score', function() {
-      test(`Should return 400 and object (message),
-      when input score less than 0`, function(done) {
-        request(app)
+      it(`Should return 400 and object (message),
+      when input score less than 0`, async (done) => {
+        await request(app)
           .post('/students')
           .send({
             name: 'dimitri',
@@ -143,9 +143,9 @@ describe('Student scoring service', function() {
             done();
           });
       });
-      test(`Should return 400 and object (message),
-      when input score greater than 0`, function(done) {
-        request(app)
+      it(`Should return 400 and object (message),
+      when input score greater than 0`, async (done) => {
+        await request(app)
           .post('/students')
           .send({
             name: 'dimitri',
@@ -162,9 +162,9 @@ describe('Student scoring service', function() {
             done();
           });
       });
-      test(`Should return 401 and object (message),
-      when submit without access_token`, function(done) {
-        request(app)
+      it(`Should return 401 and object (message),
+      when submit without access_token`, async (done) => {
+        await request(app)
           .post('/students')
           .send({
             name: 'dimitri',
@@ -177,9 +177,9 @@ describe('Student scoring service', function() {
             done();
           });
       });
-      test(`Should return 401 and object (message),
-      when submit with invalid access_token`, function(done) {
-        request(app)
+      it(`Should return 401 and object (message),
+      when submit with invalid access_token`, async (done) => {
+        await (app)
           .post('/students')
           .send({
             name: 'arnold',
@@ -193,9 +193,9 @@ describe('Student scoring service', function() {
             done();
           });
       });
-      test(`Should return 400 and object (message, errors),
-      when student name is not defined`, function(done) {
-        request(app)
+      it(`Should return 400 and object (message, errors),
+      when student name is not defined`, async (done) => {
+        await request(app)
           .post('/students')
           .send({
             score: 66

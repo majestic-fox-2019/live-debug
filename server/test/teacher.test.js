@@ -46,8 +46,8 @@ expect.extend({
 
 describe('Teacher Auth Service', function() {
   describe('Register Succesfully', function() {
-    test('Should return status 201 and access_token with encoded id and email', function(done) {
-      request(app)
+    it('Should return status 201 and access_token with encoded id and email', async (done) => {
+      await request(app)
         .post('/register')
         .send({
           email: TEST_TEACHER_EMAIL,
@@ -69,9 +69,9 @@ describe('Teacher Auth Service', function() {
     });
   });
   describe('Register Validation Error', function() {
-    test(`Should return status 400 and object (message, errors),
-    when email is invalid`, function(done) {
-      request(app)
+    it(`Should return status 400 and object (message, errors),
+    when email is invalid`, async (done) => {
+      await request(app)
         .post('/register')
         .send({
           email: TEST_INVALID_TEACHER_EMAIL,
@@ -88,9 +88,9 @@ describe('Teacher Auth Service', function() {
           done();
         });
     });
-    test(`Should return status 400 and object (message, errors),
-    when email is null`, function(done) {
-      request(app)
+    it(`Should return status 400 and object (message, errors),
+    when email is null`, async (done) => {
+      await request(app)
         .post('/register')
         .send({
           email: null,
@@ -107,9 +107,9 @@ describe('Teacher Auth Service', function() {
           done();
         });
     });
-    test(`Should return status 400 and object (message, errors),
-    when email is already taken`, function(done) {
-      request(app)
+    it(`Should return status 400 and object (message, errors),
+    when email is already taken`, async (done) => {
+      await request(app)
         .post('/register')
         .send({
           email: TEST_TEACHER_EMAIL,
@@ -126,9 +126,9 @@ describe('Teacher Auth Service', function() {
           done();
         });
     });
-    test(`Should return status 400 and object (message, errors),
-    when password is less than 6 characters`, function(done) {
-      request(app)
+    it(`Should return status 400 and object (message, errors),
+    when password is less than 6 characters`, async (done) => {
+      await request(app)
         .post('/register')
         .send({
           email: TEST_TEACHER_EMAIL,
@@ -145,9 +145,9 @@ describe('Teacher Auth Service', function() {
           done();
         });
     });
-    test(`Should return status 400 and object (message, errors),
-    when password is null`, function(done) {
-      request(app)
+    it(`Should return status 400 and object (message, errors),
+    when password is null`, async (done) => {
+      await request(app)
         .post('/register')
         .send({
           email: TEST_TEACHER_EMAIL,
@@ -164,9 +164,9 @@ describe('Teacher Auth Service', function() {
           done();
         });
     });
-    test(`Should return status 400 and object (message, errors),
-    when both password, email is null`, function(done) {
-      request(app)
+    it(`Should return status 400 and object (message, errors),
+    when both password, email is null`, async (done) => {
+      await request(app)
         .post('/register')
         .send({
           email: null,
@@ -191,8 +191,8 @@ describe('Teacher Auth Service', function() {
     });
   });
   describe(`Login Sucessfully`, function() {
-    test(`Should return status 200 and access_token with encoded id and email`, function(done) {
-      request(app)
+    it(`Should return status 200 and access_token with encoded id and email`, async (done) => {
+      await request(app)
         .post('/login')
         .send({
           email: TEST_TEACHER_EMAIL,
@@ -214,9 +214,9 @@ describe('Teacher Auth Service', function() {
     });
   });
   describe(`Login Error`, function() {
-    test(`Should return status 400 and object (message),
-    when email is wrong`, function(done) {
-      request(app)
+    it(`Should return status 400 and object (message),
+    when email is wrong`, async (done) => {
+      await request(app)
         .post('/login')
         .send({
           email: TEST_INVALID_TEACHER_EMAIL,
@@ -230,9 +230,9 @@ describe('Teacher Auth Service', function() {
           done();
         });
     });
-    test(`Should return status 400 and object (message),
-    when password is wrong`, function(done) {
-      request(app)
+    it(`Should return status 400 and object (message),
+    when password is wrong`, async (done) => {
+      await request(app)
         .post('/login')
         .send({
           email: TEST_TEACHER_EMAIL,
@@ -246,9 +246,8 @@ describe('Teacher Auth Service', function() {
           done();
         });
     });
-    test(`Should return status 400 and object (message),
-     when email is not declared`, function(done) {
-      request(app)
+    it(`Should return status 400 and object (message), when email is not declared`, async (done) => {
+      await request(app)
         .post('/login')
         .send({
           password: TEST_TEACHER_PASSWORD
@@ -261,9 +260,9 @@ describe('Teacher Auth Service', function() {
           done();
         });
     });
-    test(`Should return status 400 and object (message),
-    when password is not declared`, function(done) {
-      request(app)
+    it(`Should return status 400 and object (message),
+    when password is not declared`, async (done) => {
+      await request(app)
         .post('/login')
         .send({
           email: TEST_TEACHER_EMAIL
