@@ -1,10 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.Sequelize.Model;
-  class Student extends Model {}
+  class Student extends Model { }
   Student.init(
     {
-      nama: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -43,6 +43,7 @@ module.exports = (sequelize, DataTypes) => {
       sequelize,
       hooks: {
         beforeValidate(student, options) {
+          console.log(student, '< model student')
           const { score } = student;
           if (score < 0) {
             return Promise.reject({
@@ -67,7 +68,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   );
-  Student.associate = function(models) {
+  Student.associate = function (models) {
     // associations can be defined here
     Student.belongsTo(models.Teacher);
   };
