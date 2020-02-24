@@ -4,8 +4,9 @@
       <router-view />
     </div>
     <div class="right-menu-dokter">
-      <div v-for="doctor in doctor" :key="doctor.id" class="dokter-card">
+      <div v-for="(doctor, index) in doctors" :key="index" class="dokter-card">
         <div class="dokter-card-body">
+          <h1>{{doctor.name}}</h1>
           <div class="dokter-card-img">
             <img :src="doctor.imageUrl" alt="dokter" />
           </div>
@@ -58,7 +59,7 @@ export default {
       this.$store.dispatch("fetchDoctors");
     },
     chat(id) {
-      this.$router.push(`/tanya-dokter/${id}`);
+      this.$router.push({ path: `/tanya-dokter/${id}` });
     }
   },
   created() {
@@ -66,7 +67,8 @@ export default {
   },
   computed: {
     doctors() {
-      this.$store.state.doctors;
+      return this.$store.state.doctors;
+      // console.log(this.$store.state.doctors);
     }
   }
 };
