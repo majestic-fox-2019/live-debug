@@ -1,6 +1,8 @@
 <template>
   <div class="left-side">
-    <h3 style="font-size:22px; color:#4a4a4a;">Merasa tidak sehat? Biarkan kami membantu kamu..</h3>
+    <h3 style="font-size:22px; color:#4a4a4a;">
+      Merasa tidak sehat? Biarkan kami membantu kamu..
+    </h3>
     <div class="card-menu">
       <div class="card tanya-dokter">
         <div class="card-image">
@@ -41,15 +43,15 @@
   </div>
 </template>
 
-<style>
+<script>
 import ArticlesCarousel from './ArticlesCarousel'
 export default {
-  name: 'LeftMenu',
+  name: 'LeftMen',
   components: {
     ArticlesCarousel
   }
 }
-</style>
+</script>
+<style></style>
 
-<style>
-</style>
+<style></style>

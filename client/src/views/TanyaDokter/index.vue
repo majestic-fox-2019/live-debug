@@ -47,29 +47,29 @@
 </template>
 
 <script>
-import ChatModal from "./components/ChatModal";
+import ChatModal from './components/ChatModal'
 export default {
-  name: "TanyaDokter",
+  name: 'TanyaDokter',
   components: {
     ChatModal
   },
   methods: {
-    fetchArticles() {
-      this.$store.dispatch("fetchDoctors");
+    fetchArticles () {
+      this.$store.dispatch('fetchDoctors')
     },
-    chat(id) {
-      this.$router.push(`/tanya-dokter/${id}`);
+    chat (id) {
+      this.$router.push(`/tanya-dokter/${id}`)
     }
   },
-  created() {
-    this.fetchArticles();
+  created () {
+    this.fetchArticles()
   },
   computed: {
-    doctors() {
-      this.$store.state.doctors;
+    doctors: function () {
+      return this.$store.state.doctors
     }
   }
-};
+}
 </script>
 
 <style scoped>
