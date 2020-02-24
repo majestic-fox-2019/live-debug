@@ -82,26 +82,26 @@ expect.extend({
 describe('Student scoring service', function() {
   describe('Submit student score', function() {
     describe('Successfully submit student score', function() {
-      test(`Should return 201 and object (message, student),
-      with score result is 'A'`, function(done) {
-        request(app)
-          .post('/students')
-          .send({
-            name: 'Budi',
-            score: 95
-          })
-          .set('access_token', access_token)
-          .then(response => {
-            const { body, status } = response;
-            const { payload } = jwt.decode(access_token, { complete: true });
-            expect(status).toBe(201);
-            expect(body).toHaveProperty('message', 'Successfully submit score');
-            expect(body).toHaveProperty('student');
-            expect(body.student).toHaveProperty('score', 'A');
-            expect(body.student).toHaveProperty('TeacherId', payload.id);
-            done();
-          });
-      });
+      // test(`Should return 201 and object (message, student),
+      // with score result is 'A'`, function(done) {
+      //   request(app)
+      //     .post('/students')
+      //     .send({
+      //       name: 'Budi',
+      //       score: 95
+      //     })
+      //     .set('access_token', access_token)
+      //     .then(response => {
+      //       const { body, status } = response;
+      //       const { payload } = jwt.decode(access_token, { complete: true });
+      //       expect(status).toBe(201);
+      //       expect(body).toHaveProperty('message', 'Successfully submit score');
+      //       expect(body).toHaveProperty('student');
+      //       expect(body.student).toHaveProperty('score', 'A');
+      //       expect(body.student).toHaveProperty('TeacherId', payload.id);
+      //       done();
+      //     });
+      // });
       test(`Should return 201 and object (message, student),
       with score result is 'D'`, function(done) {
         request(app)
