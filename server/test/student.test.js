@@ -79,11 +79,11 @@ expect.extend({
   }
 });
 
-describe('Student scoring service', function() {
-  describe('Submit student score', function() {
-    describe('Successfully submit student score', function() {
+describe('Student scoring service', function () {
+  describe('Submit student score', function () {
+    describe('Successfully submit student score', function () {
       test(`Should return 201 and object (message, student),
-      with score result is 'A'`, function(done) {
+      with score result is 'A'`, function (done) {
         request(app)
           .post('/students')
           .send({
@@ -103,7 +103,7 @@ describe('Student scoring service', function() {
           });
       });
       test(`Should return 201 and object (message, student),
-      with score result is 'D'`, function(done) {
+      with score result is 'D'`, function (done) {
         request(app)
           .post('/students')
           .send({
@@ -123,9 +123,9 @@ describe('Student scoring service', function() {
           });
       });
     });
-    describe('Fail to submit student score', function() {
+    describe('Fail to submit student score', function () {
       test(`Should return 400 and object (message),
-      when input score less than 0`, function(done) {
+      when input score less than 0`, function (done) {
         request(app)
           .post('/students')
           .send({
@@ -144,7 +144,7 @@ describe('Student scoring service', function() {
           });
       });
       test(`Should return 400 and object (message),
-      when input score greater than 0`, function(done) {
+      when input score greater than 0`, function (done) {
         request(app)
           .post('/students')
           .send({
@@ -163,7 +163,7 @@ describe('Student scoring service', function() {
           });
       });
       test(`Should return 401 and object (message),
-      when submit without access_token`, function(done) {
+      when submit without access_token`, function (done) {
         request(app)
           .post('/students')
           .send({
@@ -178,7 +178,7 @@ describe('Student scoring service', function() {
           });
       });
       test(`Should return 401 and object (message),
-      when submit with invalid access_token`, function(done) {
+      when submit with invalid access_token`, function (done) {
         request(app)
           .post('/students')
           .send({
@@ -194,7 +194,7 @@ describe('Student scoring service', function() {
           });
       });
       test(`Should return 400 and object (message, errors),
-      when student name is not defined`, function(done) {
+      when student name is not defined`, function (done) {
         request(app)
           .post('/students')
           .send({

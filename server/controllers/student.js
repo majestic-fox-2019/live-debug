@@ -11,7 +11,7 @@ class StudentController {
       });
     } else {
       Student.create({
-        name: name || '',
+        name: name,
         score: submitScore,
         TeacherId: TeacherId
       })
