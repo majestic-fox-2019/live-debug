@@ -5,7 +5,7 @@ const { generateToken } = require('../helpers/jwt');
 const { comparePassword } = require('../helpers/bcrypt');
 const createError = require('http-errors');
 class TeacherController {
-  static register(res, req, next) {
+  static register(req, res, next) {
     const { email, password } = req.body;
     Teacher.create({
       email,
@@ -17,7 +17,7 @@ class TeacherController {
           email: response.email
         };
         const access_token = generateToken(payload);
-        req.status(200).json({
+        res.status(201).json({
           message: 'Successfully Register',
           access_token
         });
