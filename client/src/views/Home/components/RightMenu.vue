@@ -14,21 +14,21 @@
 
 <script>
 export default {
-  name: 'RightMenu',
+  name: "RightMenu",
   methods: {
-    fetchArticles () {
-      this.$store.dispatch('fetchArticles')
+    fetchArticles() {
+      this.$store.dispatch("fetchArticles");
     }
   },
-  created: {
-    this.fetchArticles()
+  created() {
+    this.fetchArticles();
   },
   computed: {
-    articles () {
-      return this.$store.state.articles
+    articles() {
+      return this.$store.state.articles;
     }
   }
-}
+};
 </script>
 
 <style>

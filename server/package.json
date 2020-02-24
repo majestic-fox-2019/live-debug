@@ -1,7 +1,6 @@
 {
   "name": "live-code-2",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "clear && jest --detectOpenHandles --runInBand --forceExit",
@@ -22,5 +21,12 @@
   "devDependencies": {
     "jest": "^25.1.0",
     "supertest": "^4.0.2"
-  }
+  },
+  "bin": {
+    "live-code-2": "www.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "description": ""
 }

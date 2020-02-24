@@ -14,31 +14,31 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    FETCH_ARTICLES (state, payload) {
+    FETCH_ARTICLES(state, payload) {
       state.articles = payload
     },
-    FETCH_DOCTORS (state, payload) {
+    FETCH_DOCTORS(state, payload) {
       state.doctors = payload
     },
-    UPDATE_USER_DATA (state, payload) {
+    UPDATE_USER_DATA(state, payload) {
       state.user.name = payload.name
       state.user.phone = payload.phone
     }
   },
   actions: {
-    fetchArticles ({ commit }) {
+    fetchArticles({ commit }) {
       axios({
         method: 'get',
         url: 'http://localhost:3000/articles'
       })
         .then(({ data }) => {
-          commit("FETCH_DOCTORS", data);
+          commit("FETCH_ARTICLES", data);
         })
         .catch(err => {
           console.log(err)
         })
     },
-    fetchDoctors ({ commit }) {
+    fetchDoctors({ commit }) {
       axios({
         method: 'get',
         url: 'http://localhost:3000/doctors'
@@ -50,7 +50,7 @@ export default new Vuex.Store({
           console.log(err)
         })
     },
-    sendMessage ({ commit }, payload) {
+    sendMessage({ commit }, payload) {
       return axios({
         method: 'put',
         url: `http://localhost:3000/doctors/${payload.id}`,
@@ -65,7 +65,7 @@ export default new Vuex.Store({
         }
       })
     },
-    getDetailDokter ({ commit }, payload) {
+    getDetailDokter({ commit }, payload) {
       return axios({
         method: 'get',
         url: `http://localhost:3000/doctors/${payload}`

@@ -14,16 +14,16 @@ const routes = [
   },
   {
     path: '/tanya-dokter',
-    name: 'tanya dokter',
+    name: 'tanya_dokter',
     component: () => import(/* webpackChunkName: "tanyadokter" */ '../views/TanyaDokter'),
     children: [
       {
-        path: '',
+        path: '/chat-home',
         name: 'chat home',
         component: ChatHome
       },
       {
-        path: ':id',
+        path: '/:id',
         name: 'chat',
         component: ChatDetail
       }

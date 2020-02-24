@@ -1,7 +1,7 @@
 const { verifyToken } = require('../helpers/jwt');
 const { Teacher } = require('../models');
 
-module.exports = function(req, res, next) {
+module.exports = function (req, res, next) {
   try {
     const access_token = req.header.access_token;
     req.teacher = verifyToken(access_token);
