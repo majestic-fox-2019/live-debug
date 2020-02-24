@@ -8,8 +8,16 @@
       "rating": "100%",
       "messages": [
         {
+          "name": "Jack",
+          "msg": "Hello"
+        },
+        {
           "name": "halo",
-          "msg": "siapa disana"
+          "msg": "halooo"
+        },
+        {
+          "name": "halo",
+          "msg": "hai"
         },
         {
           "name": "john",
@@ -17,11 +25,15 @@
         },
         {
           "name": "halo",
-          "msg": "hai"
+          "msg": "siapa disana"
         },
         {
-          "name": "halo",
-          "msg": "halooo"
+          "name": "",
+          "msg": "halo"
+        },
+        {
+          "name": "",
+          "msg": "Hallooo"
         }
       ]
     },
@@ -35,6 +47,10 @@
         {
           "name": "asdasd",
           "msg": "halo"
+        },
+        {
+          "name": "Marlene",
+          "msg": "Check dash"
         }
       ]
     },
