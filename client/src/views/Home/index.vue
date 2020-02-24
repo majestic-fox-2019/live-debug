@@ -9,8 +9,9 @@
 </template>
 
 <script>
-import LeftMenu from "./components/LeftMenu";
-import RightMenu from "./components/RightMenu";
+import LeftMenu from './components/LeftMenu.vue';
+import RightMenu from './components/RightMenu.vue';
+
 export default {
   name: "Home",
   components: {
