@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "clear && jest --detectOpenHandles --runInBand --forceExit",
+    "test": "clear && jest --detectOpenHandles --runInBand --forceExit --setTimeout=500",
     "initdb": "sequelize db:create --env=test && sequelize db:migrate --env=test"
   },
   "keywords": [],
