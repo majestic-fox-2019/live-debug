@@ -1,3 +1,4 @@
+"use strict"
 const request = require('supertest');
 const app = require('../app');
 const { generateToken } = require('../helpers/jwt');
@@ -82,7 +83,7 @@ expect.extend({
 describe('Student scoring service', function() {
   describe('Submit student score', function() {
     describe('Successfully submit student score', function() {
-      test(`Should return 201 and object (message, student),
+      test.only(`Should return 201 and object (message, student),
       with score result is 'A'`, function(done) {
         request(app)
           .post('/students')
