@@ -9,7 +9,11 @@
       "messages": [
         {
           "name": "halo",
-          "msg": "siapa disana"
+          "msg": "halooo"
+        },
+        {
+          "name": "halo",
+          "msg": "hai"
         },
         {
           "name": "john",
@@ -17,11 +21,11 @@
         },
         {
           "name": "halo",
-          "msg": "hai"
+          "msg": "siapa disana"
         },
         {
-          "name": "halo",
-          "msg": "halooo"
+          "name": "nanda",
+          "msg": "halo"
         }
       ]
     },
@@ -33,8 +37,16 @@
       "rating": "96%",
       "messages": [
         {
+          "name": "nanda",
+          "msg": "hai"
+        },
+        {
           "name": "asdasd",
           "msg": "halo"
+        },
+        {
+          "name": "nanda",
+          "msg": "saya pengen nanya"
         }
       ]
     },
