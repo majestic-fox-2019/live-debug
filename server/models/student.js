@@ -1,10 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.Sequelize.Model;
-  class Student extends Model {}
+  class Student extends Model { }
   Student.init(
     {
-      nama: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -49,7 +49,7 @@ module.exports = (sequelize, DataTypes) => {
               status: 400,
               message: 'Score cannot be less than 0'
             });
-          } else if (score < 100) {
+          } else if (score > 100) {
             return Promise.reject({
               status: 400,
               message: 'Score cannot be greater than 100'
@@ -67,7 +67,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   );
-  Student.associate = function(models) {
+  Student.associate = function (models) {
     // associations can be defined here
     Student.belongsTo(models.Teacher);
   };
