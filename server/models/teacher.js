@@ -2,7 +2,7 @@
 const { hashPassword } = require('../helpers/bcrypt');
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.Sequelize.Model;
-  class Teacher extends Model {}
+  class Teacher extends Model { }
   Teacher.init(
     {
       email: {
@@ -47,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   );
-  Teacher.associate = function(models) {
+  Teacher.associate = function (models) {
     // associations can be defined here
     Teacher.hasMany(models.Student);
   };
