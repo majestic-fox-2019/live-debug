@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "clear && jest --detectOpenHandles --runInBand --forceExit",
+    "dev": "nodemon app.js",
+    "test": "clear && jest --watchAll --detectOpenHandles --runInBand --forceExit",
     "initdb": "sequelize db:create --env=test && sequelize db:migrate --env=test"
   },
   "keywords": [],
