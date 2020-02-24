@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home'
+import Home from '../views/Home/index.vue'
 import ChatHome from '../views/TanyaDokter/components/ChatHome.vue'
 import ChatDetail from '../views/TanyaDokter/components/ChatDetail.vue'
 
@@ -15,7 +15,8 @@ const routes = [
   {
     path: '/tanya-dokter',
     name: 'tanya dokter',
-    component: () => import(/* webpackChunkName: "tanyadokter" */ '../views/TanyaDokter'),
+    component: () =>
+      import(/* webpackChunkName: "tanyadokter" */ '../views/TanyaDokter'),
     children: [
       {
         path: '',
