@@ -63,7 +63,6 @@ export default {
   },
   created() {
     this.fetchArticles();
-    console.log(this.$store.state.doctors);
   },
   computed: {
     doctors() {
