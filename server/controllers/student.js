@@ -4,7 +4,7 @@ class StudentController {
     const { name, score } = req.body;
     const submitScore = Number(score);
     const TeacherId = req.teacher.id;
-    if (Number.isInteger(submitScore)) {
+    if (!Number.isInteger(submitScore)) {
       next({
         status: 400,
         message: 'Score only accept number'
