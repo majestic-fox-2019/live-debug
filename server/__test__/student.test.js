@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('../app');
 const { generateToken } = require('../helpers/jwt');
-const { sequelize, Teacher } = require('../models');
+const { Student, Teacher } = require('../models');
 const jwt = require('jsonwebtoken');
 const { queryInterface } = sequelize;
 
