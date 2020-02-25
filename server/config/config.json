@@ -1,21 +1,21 @@
 {
   "development": {
-    "username": "",
-    "password": null,
+    "username": "postgres",
+    "password": "Milala08",
     "database": "live-debug-server",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "postgres"
   },
   "test": {
-    "username": "",
-    "password": null,
+    "username": "postgres",
+    "password": "Milala08",
     "database": "live-debug-server",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
     "username": "root",
-    "password": null,
+    "password": "Milala08",
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql",

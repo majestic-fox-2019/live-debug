@@ -1,30 +1,30 @@
-'use strict';
+"use strict";
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.Sequelize.Model;
   class Student extends Model {}
   Student.init(
     {
-      nama: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
           notEmpty: {
             args: true,
-            msg: 'Student name should not empty'
+            msg: "Student name should not empty"
           },
           notNull: {
             args: true,
-            msg: 'Student name is required field'
+            msg: "Student name is required field"
           }
         }
       },
       score: {
         type: DataTypes.ENUM,
-        values: ['A', 'B', 'C', 'D'],
+        values: ["A", "B", "C", "D"],
         validate: {
           isIn: {
-            args: [['A', 'B', 'C', 'D']],
-            msg: 'Invalid score value'
+            args: [["A", "B", "C", "D"]],
+            msg: "Invalid score value"
           }
         }
       },
@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
         validate: {
           notNull: {
             args: true,
-            msg: 'Invalid id teacher'
+            msg: "Invalid id teacher"
           }
         }
       }
@@ -43,25 +43,26 @@ module.exports = (sequelize, DataTypes) => {
       sequelize,
       hooks: {
         beforeValidate(student, options) {
+          console.log(student);
           const { score } = student;
           if (score < 0) {
             return Promise.reject({
               status: 400,
-              message: 'Score cannot be less than 0'
+              message: "Score cannot be less than 0"
             });
-          } else if (score < 100) {
+          } else if (score > 100) {
             return Promise.reject({
               status: 400,
-              message: 'Score cannot be greater than 100'
+              message: "Score cannot be greater than 100"
             });
           } else if (score >= 90) {
-            student.score = 'A';
+            student.score = "A";
           } else if (score >= 80) {
-            student.score = 'B';
+            student.score = "B";
           } else if (score >= 70) {
-            student.score = 'C';
+            student.score = "C";
           } else {
-            student.score = 'D';
+            student.score = "D";
           }
         }
       }
