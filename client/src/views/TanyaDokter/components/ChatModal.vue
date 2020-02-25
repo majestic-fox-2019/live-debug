@@ -38,7 +38,7 @@ export default {
       this.$store.commit('UPDATE_USER_DATA', payload)
       this.name = ''
       this.phone = ''
-      $('#exampleModalCenter').modal('hide')
+      window.$('#exampleModalCenter').modal('hide')
     }
   }
 }
