@@ -2,7 +2,7 @@
   <div class="left-side">
     <h3 style="font-size:22px; color:#4a4a4a;">Merasa tidak sehat? Biarkan kami membantu kamu..</h3>
     <div class="card-menu">
-      <div class="card tanya-dokter">
+      <div @click="toTanyaDokter" class="card tanya-dokter">
         <div class="card-image">
           <img src="../../../assets/tanyadokter.png" alt="tanya-dokter" />
         </div>
@@ -41,15 +41,20 @@
   </div>
 </template>
 
-<style>
+<script>
 import ArticlesCarousel from './ArticlesCarousel'
 export default {
   name: 'LeftMenu',
   components: {
     ArticlesCarousel
+  },
+  methods: {
+    toTanyaDokter () {
+      this.$router.push('/tanya-dokter')
+    }
   }
 }
-</style>
+</script>
 
 <style>
 </style>

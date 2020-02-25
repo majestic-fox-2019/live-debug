@@ -9,7 +9,11 @@
       "messages": [
         {
           "name": "halo",
-          "msg": "siapa disana"
+          "msg": "halooo"
+        },
+        {
+          "name": "halo",
+          "msg": "hai"
         },
         {
           "name": "john",
@@ -17,11 +21,11 @@
         },
         {
           "name": "halo",
-          "msg": "hai"
+          "msg": "siapa disana"
         },
         {
-          "name": "halo",
-          "msg": "halooo"
+          "name": "Test",
+          "msg": "test"
         }
       ]
     },
@@ -44,7 +48,16 @@
       "id": 3,
       "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/images/607_11-12-2018_11-18-24.jpg",
       "rating": "89%",
-      "messages": []
+      "messages": [
+        {
+          "name": "sadas",
+          "msg": "test"
+        },
+        {
+          "name": "Bayu",
+          "msg": "bayu test"
+        }
+      ]
     },
     {
       "name": "Drg. Marlisa",
@@ -83,8 +96,20 @@
       "rating": "84%",
       "messages": [
         {
+          "name": "Ilham",
+          "msg": "test"
+        },
+        {
           "name": "rubi",
           "msg": "hai dok"
+        },
+        {
+          "name": "Ilham",
+          "msg": "ilham disini"
+        },
+        {
+          "name": "Test",
+          "msg": "last test"
         }
       ]
     },
@@ -115,7 +140,12 @@
       "id": 10,
       "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/thumbnails/82_23-2-2018_11-11-47.png",
       "rating": "93%",
-      "messages": []
+      "messages": [
+        {
+          "name": "Okka",
+          "msg": "final test"
+        }
+      ]
     }
   ],
   "articles": [
