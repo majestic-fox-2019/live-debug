@@ -9,7 +9,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form @submit.prevent="send()">
+                    <form @submit.prevent="send">
                         <input v-model="name" class="mx-2" type="text" placeholder="your name" required>
                         <input v-model="phone" class="mx-2" type="text" placeholder="+62 phone number" required>
                         <input type="submit" class="btn btn-primary mt-2" style="float:right;" value="Save">

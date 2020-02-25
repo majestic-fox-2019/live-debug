@@ -270,7 +270,7 @@ describe('Teacher Auth Service', function() {
         })
         .then(response => {
           const { body, status } = response;
-          // expect(status).toBe(400);
+          expect(status).toBe(400);
           expect(body).toBeTypeOf('object');
           expect(body).toHaveProperty('message', 'Invalid email or password');
           done();
