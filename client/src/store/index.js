@@ -2,9 +2,9 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 
-Vue.use(Vue)
+Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state: {
     articles: [],
     doctors: [],
@@ -32,7 +32,7 @@ export default new Vuex.Store({
         url: 'http://localhost:3000/articles'
       })
         .then(({ data }) => {
-          commit("FETCH_DOCTORS", data);
+          commit('FETCH_ARTICLES', data)
         })
         .catch(err => {
           console.log(err)
@@ -43,7 +43,7 @@ export default new Vuex.Store({
         method: 'get',
         url: 'http://localhost:3000/doctors'
       })
-        .then((data) => {
+        .then(({ data }) => {
           commit('FETCH_DOCTORS', data)
         })
         .catch(err => {
@@ -75,3 +75,5 @@ export default new Vuex.Store({
   modules: {
   }
 })
+
+export default store

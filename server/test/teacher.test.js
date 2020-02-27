@@ -65,7 +65,8 @@ describe('Teacher Auth Service', function() {
           expect(decoded.payload).not.toHaveProperty('password');
 
           done();
-        });
+        })
+        ;
     });
   });
   describe('Register Validation Error', function() {

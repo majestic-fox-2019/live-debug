@@ -2,7 +2,7 @@
   <div class="left-side">
     <h3 style="font-size:22px; color:#4a4a4a;">Merasa tidak sehat? Biarkan kami membantu kamu..</h3>
     <div class="card-menu">
-      <div class="card tanya-dokter">
+      <router-link class="card tanya-dokter" to="/tanya-dokter">
         <div class="card-image">
           <img src="../../../assets/tanyadokter.png" alt="tanya-dokter" />
         </div>
@@ -12,7 +12,7 @@
         <div class="card-description">
           <p>Chat dengan Dokter Umum dan Spesialis</p>
         </div>
-      </div>
+      </router-link>
       <div class="card rumah-sakit">
         <div class="card-image">
           <img src="../../../assets/rumahsakit.png" alt="rumah-sakit" />
@@ -41,15 +41,15 @@
   </div>
 </template>
 
-<style>
+<script>
 import ArticlesCarousel from './ArticlesCarousel'
+
 export default {
   name: 'LeftMenu',
   components: {
     ArticlesCarousel
   }
 }
-</style>
-
+</script>
 <style>
 </style>
