@@ -2,8 +2,10 @@ const { Teacher } = require('../models');
 const { generateToken } = require('../helpers/jwt');
 const { comparePassword } = require('../helpers/bcrypt');
 class TeacherController {
-  static register(res, req, next) {
-    const { email, password } = res.body;
+  static register(req, res, next) {
+    console.log('masuk regist')
+    const { email, password } = req.body;
+    console.log({email, password})
     Teacher.create({
       email,
       password
@@ -14,13 +16,14 @@ class TeacherController {
           email: response.email
         };
         const access_token = generateToken(payload);
-        req.status(200).json({
+        res.status(200).json({
           message: 'Successfully Register',
           access_token
         });
       })
       .catch(err => next(err));
   }
+
   static login(req, res, next) {
     const { email, password } = req.body;
     Teacher.findOne({

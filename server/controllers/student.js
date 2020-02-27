@@ -4,24 +4,30 @@ class StudentController {
     const { name, score } = req.body;
     const submitScore = Number(score);
     const TeacherId = req.teacher.id;
-    if (Number.isInteger(submitScore)) {
+    if (!Number.isInteger(submitScore)) {
+      console.log('masuk if')
       next({
         status: 400,
         message: 'Score only accept number'
       });
     } else {
+      console.log('masuk else', {name, score, submitScore})
       Student.create({
         name: name || '',
         score: submitScore,
         TeacherId: TeacherId
       })
         .then(response => {
-          res.status(201).json(`{
+          console.log('masuk then')
+          res.status(201).json({
             message: 'Successfully submit score',
             student: response
-          }`);
+          });
         })
-        .catch(err => next(err));
+        .catch(err => {
+          console.log('masuk', err.response)
+          next(err)
+        });
     }
   }
 }

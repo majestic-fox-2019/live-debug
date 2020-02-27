@@ -41,15 +41,15 @@
   </div>
 </template>
 
-<style>
-import ArticlesCarousel from './ArticlesCarousel'
+<script>
+import ArticlesCarousel from './ArticlesCarousel';
 export default {
   name: 'LeftMenu',
   components: {
     ArticlesCarousel
   }
 }
-</style>
+</script>
 
 <style>
 </style>
