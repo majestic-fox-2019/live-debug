@@ -10,16 +10,17 @@ class StudentController {
         message: 'Score only accept number'
       });
     } else {
-      Student.create({
-        name: name || '',
+      return Student.create({
+        name: name,
         score: submitScore,
         TeacherId: TeacherId
       })
         .then(response => {
-          res.status(201).json(`{
+          console.log(response, '< ini resoinse')
+          res.status(201).json({
             message: 'Successfully submit score',
             student: response
-          }`);
+          });
         })
         .catch(err => next(err));
     }

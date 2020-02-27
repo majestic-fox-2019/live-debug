@@ -8,6 +8,14 @@
       "rating": "100%",
       "messages": [
         {
+          "name": "ajeng",
+          "msg": "asra"
+        },
+        {
+          "name": "asdasd",
+          "msg": "12"
+        },
+        {
           "name": "halo",
           "msg": "siapa disana"
         },
@@ -22,6 +30,14 @@
         {
           "name": "halo",
           "msg": "halooo"
+        },
+        {
+          "name": "asdasd",
+          "msg": "213"
+        },
+        {
+          "name": "ajeng",
+          "msg": "aaaaa"
         }
       ]
     },
@@ -33,8 +49,16 @@
       "rating": "96%",
       "messages": [
         {
+          "name": "ajeeng",
+          "msg": "hak"
+        },
+        {
           "name": "asdasd",
           "msg": "halo"
+        },
+        {
+          "name": "ajeeng",
+          "msg": "asd"
         }
       ]
     },
