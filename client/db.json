@@ -8,6 +8,10 @@
       "rating": "100%",
       "messages": [
         {
+          "name": "dede",
+          "msg": "kuda"
+        },
+        {
           "name": "halo",
           "msg": "siapa disana"
         },
@@ -22,6 +26,10 @@
         {
           "name": "halo",
           "msg": "halooo"
+        },
+        {
+          "name": "dede",
+          "msg": "siap"
         }
       ]
     },
@@ -35,6 +43,10 @@
         {
           "name": "asdasd",
           "msg": "halo"
+        },
+        {
+          "name": "dede",
+          "msg": "ok"
         }
       ]
     },

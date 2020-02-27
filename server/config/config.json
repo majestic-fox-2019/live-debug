@@ -1,24 +1,16 @@
 {
   "development": {
-    "username": "",
-    "password": null,
-    "database": "live-debug-server",
+    "username": "postgres",
+    "password": "Bloodfire12",
+    "database": "live-debug-server1",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "",
-    "password": null,
+    "username": "postgres",
+    "password": "Bloodfire12",
     "database": "live-debug-server",
     "host": "127.0.0.1",
     "dialect": "postgres"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "operatorsAliases": false
   }
 }
