@@ -11,7 +11,6 @@ module.exports = function(req, res, next) {
       }
     })
       .then(response => {
-        next()
         if (response) {
           next();
         } else {

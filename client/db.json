@@ -8,6 +8,14 @@
       "rating": "100%",
       "messages": [
         {
+          "name": "",
+          "msg": "Hallooo"
+        },
+        {
+          "name": "",
+          "msg": "halo"
+        },
+        {
           "name": "halo",
           "msg": "siapa disana"
         },
@@ -22,6 +30,14 @@
         {
           "name": "halo",
           "msg": "halooo"
+        },
+        {
+          "name": "Jack",
+          "msg": "Hello"
+        },
+        {
+          "name": "",
+          "msg": "haloo"
         }
       ]
     },
@@ -35,6 +51,10 @@
         {
           "name": "asdasd",
           "msg": "halo"
+        },
+        {
+          "name": "Marlene",
+          "msg": "Check dash"
         }
       ]
     },
@@ -65,7 +85,12 @@
       "id": 5,
       "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/thumbnails/196758_23-4-2019_17-39-21.jpg",
       "rating": "90%",
-      "messages": []
+      "messages": [
+        {
+          "name": "david",
+          "msg": "hello"
+        }
+      ]
     },
     {
       "name": "Dr. Iman Teguh",

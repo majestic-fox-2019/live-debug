@@ -1,9 +1,16 @@
+'use strict';
+
 const jwt = require('jsonwebtoken');
 const SECRET = process.env.JWT_SECRET;
-exports.generateToken = function(payload) {
+const generateToken = (payload) => {
   return jwt.sign(payload, SECRET);
 };
 
-exports.verifyToken = function(payload) {
+const verifyToken = (payload) => {
   return jwt.verify(payload, SECRET);
+};
+
+module.exports = {
+  generateToken,
+  verifyToken
 };

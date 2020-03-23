@@ -1,9 +1,12 @@
+'use strict';
+
 const { Teacher } = require('../models');
 const { generateToken } = require('../helpers/jwt');
 const { comparePassword } = require('../helpers/bcrypt');
+const createError = require('http-errors');
 class TeacherController {
-  static register(res, req, next) {
-    const { email, password } = res.body;
+  static register(req, res, next) {
+    const { email, password } = req.body;
     Teacher.create({
       email,
       password
@@ -14,13 +17,16 @@ class TeacherController {
           email: response.email
         };
         const access_token = generateToken(payload);
-        req.status(200).json({
+        res.status(201).json({
           message: 'Successfully Register',
           access_token
         });
       })
-      .catch(err => next(err));
+      .catch(err => {
+        next(err);
+      });
   }
+
   static login(req, res, next) {
     const { email, password } = req.body;
     Teacher.findOne({
@@ -30,7 +36,7 @@ class TeacherController {
     })
       .then(response => {
         if (response) {
-          if (comparePassword(password || '', response.password)) {
+          if (comparePassword(password, response.password)) {
             const payload = {
               id: response.id,
               email: response.email
@@ -41,19 +47,15 @@ class TeacherController {
               access_token
             });
           } else {
-            next({
-              status: 400,
-              message: 'Invalid email or password'
-            });
+            throw createError(400, { message: 'Invalid email or password' });
           }
         } else {
-          next({
-            status: 400,
-            message: 'Invalid email or password'
-          });
+          throw createError(400, { message: 'Invalid email or password' });
         }
       })
-      .catch(err => next(err));
+      .catch(err => {
+        next(err);
+      });
   }
 }
 module.exports = TeacherController;
